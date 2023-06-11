@@ -19,9 +19,16 @@ public class OfferPackage {
     private Long id;
 
     private String title;
+
+    @Column(length = 1000)
     private String description;
+
+    private int duration;
     private double price;
     private String specials;
+
+    @Column(name = "other_details", length = 1000)
+    private String otherDetails;
 
     @Column(name = "max_amount_of_people")
     private Integer maxAmountOfPeople;

@@ -1,13 +1,10 @@
 package io.mkolodziejczyk92.eventplannerapp.data.model.dto;
 
 import io.mkolodziejczyk92.eventplannerapp.data.entity.Address;
-import io.mkolodziejczyk92.eventplannerapp.data.entity.OfferPackage;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -23,6 +20,5 @@ public class OfferDto {
     private Long eventId;
     private String organizer;
     private String contact;
-    private List<OfferPackage> offerPackages;
     private Address address;
 }

@@ -1,7 +1,6 @@
 package io.mkolodziejczyk92.eventplannerapp.data.mapper;
 
 import io.mkolodziejczyk92.eventplannerapp.data.entity.Offer;
-import io.mkolodziejczyk92.eventplannerapp.data.entity.OfferPackage;
 import io.mkolodziejczyk92.eventplannerapp.data.model.dto.OfferDto;
 import io.mkolodziejczyk92.eventplannerapp.data.repository.EventRepository;
 import org.springframework.stereotype.Component;
@@ -34,10 +33,6 @@ public class OfferMapperImpl implements OfferMapper {
         offerDto.setOrganizer(offer.getOrganizer());
         offerDto.setContact(offer.getContact());
         offerDto.setEventId( offer.getEvent().getId());
-        List<OfferPackage> list = offer.getOfferPackages();
-        if ( list != null ) {
-            offerDto.setOfferPackages( new ArrayList<>( list ) );
-        }
         offerDto.setAddress( offer.getAddress() );
 
         return offerDto;
@@ -59,10 +54,6 @@ public class OfferMapperImpl implements OfferMapper {
         offer.setOrganizer(offerDto.getOrganizer());
         offer.setContact(offerDto.getContact());
         offer.setEvent(eventRepository.findById(offerDto.getEventId()).get());
-        List<OfferPackage> list = offerDto.getOfferPackages();
-        if (list != null) {
-            offer.setOfferPackages(new ArrayList<>(list));
-        }
         offer.setAddress(offerDto.getAddress());
 
         return offer;
@@ -73,7 +64,7 @@ public class OfferMapperImpl implements OfferMapper {
             return null;
         }
 
-        List<OfferDto> list = new ArrayList<OfferDto>( offers.size() );
+        List<OfferDto> list = new ArrayList<>( offers.size() );
         for ( Offer offer : offers ) {
             list.add( mapToOfferDto( offer ) );
         }
