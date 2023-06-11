@@ -10,4 +10,6 @@ public interface OfferPackageService {
 
     List<OfferPackageDto> getAllOfferPackagesByOfferId(Long offerId);
 
+    OfferPackageDto getPackageById(Long id);
+
 }

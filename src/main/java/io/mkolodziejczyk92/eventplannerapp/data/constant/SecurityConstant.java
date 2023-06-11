@@ -10,6 +10,6 @@ public class SecurityConstant {
     public static final String FORBIDDEN = "You have to log in first";
     public static final String ACCESS_DENIED = "Your permissions are insufficient";
     public static final String[] PUBLIC_URLS = {"/user/login", "/user/registration", "/events",
-            "/events/*/offers/*", "/events/*/offers", "/offers/*/packages"};
+            "/events/*/offers/*", "/events/*/offers", "/offers/*", "/packageDetails/*"};
     public static final String TOKEN_HEADER = "Jwt-Token";
 }

@@ -25,4 +25,11 @@ public class OfferPackageServiceImpl implements OfferPackageService {
         List<OfferPackage> packages = repository.findByOfferId(offerId);
         return packageMapper.mapToOfferPackageDtoList(packages);
     }
+
+    @Override
+    public OfferPackageDto getPackageById(Long id) {
+        OfferPackage offerPackage = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Package does not exist"));
+        return packageMapper.mapToOfferPackageDto(offerPackage);
+    }
 }
