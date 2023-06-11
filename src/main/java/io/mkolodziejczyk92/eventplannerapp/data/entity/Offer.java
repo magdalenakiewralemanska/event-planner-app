@@ -22,6 +22,8 @@ public class Offer {
 
     private String name;
     private String description;
+    private String organizer;
+    private String contact;
 
     @Column(name = "min_age")
     private int minAge;

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/events")
+@RequestMapping("/events/{id}/offers")
 public class OfferController {
 
     private final OfferService offerService;
@@ -16,7 +16,7 @@ public class OfferController {
         this.offerService = offerService;
     }
 
-    @GetMapping("/{id}/offers")
+    @GetMapping()
     public List<OfferDto> getOffers(@PathVariable Long id){
         return offerService.getAllOffers(id);
     }
@@ -26,18 +26,18 @@ public class OfferController {
         return offerService.getOfferById(offerId);
     }
 
-    @PostMapping("/offers")
+    @PostMapping()
     public void createOffer(@RequestBody OfferDto offerDto){
         offerService.createOffer(offerDto);
     }
 
-    @PutMapping("offers/{id}")
-    public void updateOffer(@RequestBody OfferDto offerDto, @PathVariable Long id){
-        offerService.updateOffer(id, offerDto);
+    @PutMapping("{offerId}")
+    public void updateOffer(@RequestBody OfferDto offerDto, @PathVariable Long offerId){
+        offerService.updateOffer(offerId, offerDto);
     }
 
-    @DeleteMapping("offers/{id}")
-    public void deleteOffer(@PathVariable Long id){
-        offerService.deleteOffer(id);
+    @DeleteMapping("{offerId}")
+    public void deleteOffer(@PathVariable Long offerId){
+        offerService.deleteOffer(offerId);
     }
 }

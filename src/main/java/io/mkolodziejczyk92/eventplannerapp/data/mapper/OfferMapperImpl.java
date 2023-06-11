@@ -31,10 +31,12 @@ public class OfferMapperImpl implements OfferMapper {
         offerDto.setMinAge( offer.getMinAge() );
         offerDto.setMaxAge( offer.getMaxAge() );
         offerDto.setDescription( offer.getDescription() );
+        offerDto.setOrganizer(offer.getOrganizer());
+        offerDto.setContact(offer.getContact());
         offerDto.setEventId( offer.getEvent().getId());
         List<OfferPackage> list = offer.getOfferPackages();
         if ( list != null ) {
-            offerDto.setOfferPackages( new ArrayList<OfferPackage>( list ) );
+            offerDto.setOfferPackages( new ArrayList<>( list ) );
         }
         offerDto.setAddress( offer.getAddress() );
 
@@ -54,10 +56,12 @@ public class OfferMapperImpl implements OfferMapper {
         offer.setMinAge(offerDto.getMinAge());
         offer.setMaxAge(offerDto.getMaxAge());
         offer.setDescription(offerDto.getDescription());
+        offer.setOrganizer(offerDto.getOrganizer());
+        offer.setContact(offerDto.getContact());
         offer.setEvent(eventRepository.findById(offerDto.getEventId()).get());
         List<OfferPackage> list = offerDto.getOfferPackages();
         if (list != null) {
-            offer.setOfferPackages(new ArrayList<OfferPackage>(list));
+            offer.setOfferPackages(new ArrayList<>(list));
         }
         offer.setAddress(offerDto.getAddress());
 

@@ -21,6 +21,8 @@ public class OfferDto {
     private int maxAge;
     private String description;
     private Long eventId;
+    private String organizer;
+    private String contact;
     private List<OfferPackage> offerPackages;
     private Address address;
 }
