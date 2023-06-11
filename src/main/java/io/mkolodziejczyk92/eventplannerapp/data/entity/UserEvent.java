@@ -1,6 +1,6 @@
 package io.mkolodziejczyk92.eventplannerapp.data.entity;
 
-import io.mkolodziejczyk92.eventplannerapp.data.enums.EStartingTime;
+import io.mkolodziejczyk92.eventplannerapp.data.enums.StartingTime;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,15 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "order")
-public class Order {
+@Table(name = "user_event")
+public class UserEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,15 +25,16 @@ public class Order {
 
     @Column(name = "starting_time")
     @Enumerated(EnumType.STRING)
-    private EStartingTime startingTime;
+    private StartingTime startingTime;
 
-    @OneToMany(mappedBy = "order")
-    private Set<Offer> offer;
-
-    @OneToOne
-    private OfferPackage offerPackage;
+    @Column(name = "is_editable")
+    private boolean isEditable;
 
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
-    private Customer customer;
+    @JoinColumn(name = "offer_id")
+    private Offer offer;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

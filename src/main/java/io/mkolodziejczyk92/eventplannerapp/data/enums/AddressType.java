@@ -1,7 +1,6 @@
 package io.mkolodziejczyk92.eventplannerapp.data.enums;
 
-public enum ECustomerType {
-    INDIVIDUAL,
-    COMPANY
-
+public enum AddressType {
+    EVENT_ADDRESS,
+    RESIDENCE
 }

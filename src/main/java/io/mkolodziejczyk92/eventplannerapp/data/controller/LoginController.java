@@ -4,7 +4,7 @@ import io.mkolodziejczyk92.eventplannerapp.data.constant.SecurityConstant;
 import io.mkolodziejczyk92.eventplannerapp.data.entity.User;
 import io.mkolodziejczyk92.eventplannerapp.data.model.UserPrincipal;
 import io.mkolodziejczyk92.eventplannerapp.data.security.token.JwtProvider;
-import io.mkolodziejczyk92.eventplannerapp.data.service.UserPrincipalService;
+import io.mkolodziejczyk92.eventplannerapp.data.service.impl.UserPrincipalService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

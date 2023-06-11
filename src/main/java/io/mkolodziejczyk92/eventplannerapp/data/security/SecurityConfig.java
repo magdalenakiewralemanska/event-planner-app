@@ -4,7 +4,7 @@ import io.mkolodziejczyk92.eventplannerapp.data.constant.SecurityConstant;
 import io.mkolodziejczyk92.eventplannerapp.data.security.messages.AccessDeniedMessage;
 import io.mkolodziejczyk92.eventplannerapp.data.security.messages.AuthenticationForbiddenMessage;
 import io.mkolodziejczyk92.eventplannerapp.data.security.token.AuthorizationFilter;
-import io.mkolodziejczyk92.eventplannerapp.data.service.UserPrincipalService;
+import io.mkolodziejczyk92.eventplannerapp.data.service.impl.UserPrincipalService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

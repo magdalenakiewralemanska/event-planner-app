@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,18 +29,14 @@ public class Offer {
     @Column(name = "max_age")
     private int maxAge;
 
-    @Column(name = "event_type")
-    private String eventType;
+    @ManyToOne
+    @JoinColumn(name = "event_id")
+    private Event event;
 
     @OneToMany(mappedBy = "offer")
-    private Set<OfferPackage> offerPackages;
+    private List<OfferPackage> offerPackages;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
-
-    @ManyToOne
-    @JoinColumn(name = "address_id")
+    @OneToOne
     private Address address;
 
 }

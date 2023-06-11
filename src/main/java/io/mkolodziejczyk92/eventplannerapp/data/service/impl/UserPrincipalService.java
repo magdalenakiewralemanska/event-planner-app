@@ -1,4 +1,4 @@
-package io.mkolodziejczyk92.eventplannerapp.data.service;
+package io.mkolodziejczyk92.eventplannerapp.data.service.impl;
 
 import io.mkolodziejczyk92.eventplannerapp.data.entity.User;
 import io.mkolodziejczyk92.eventplannerapp.data.model.UserPrincipal;

@@ -1,13 +1,11 @@
 package io.mkolodziejczyk92.eventplannerapp.data.entity;
 
-import io.mkolodziejczyk92.eventplannerapp.data.enums.EAddressType;
+import io.mkolodziejczyk92.eventplannerapp.data.enums.AddressType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -33,14 +31,13 @@ public class Address {
     @Column(name = "zip_code")
     private String zipCode;
 
+    @OneToOne
+    private Offer offer;
+
     @Enumerated(EnumType.STRING)
-    private EAddressType eAddressType;
+    private AddressType addressType;
 
-    @OneToOne(mappedBy = "address")
-    private Customer customer;
-
-    @OneToMany(mappedBy = "address")
-    private Set<Offer> offer;
-
+    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
+    private User user;
 
 }

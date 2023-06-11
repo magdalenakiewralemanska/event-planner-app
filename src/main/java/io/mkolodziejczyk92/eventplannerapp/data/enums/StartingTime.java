@@ -2,7 +2,7 @@ package io.mkolodziejczyk92.eventplannerapp.data.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum EStartingTime {
+public enum StartingTime {
     AM_9("9 am"),
     AM_11("11 am"),
     PM_3("3 pm"),
@@ -10,7 +10,7 @@ public enum EStartingTime {
 
     private String wordForm;
 
-    EStartingTime(String s) {
+    StartingTime(String s) {
         this.wordForm = s;
     }
 

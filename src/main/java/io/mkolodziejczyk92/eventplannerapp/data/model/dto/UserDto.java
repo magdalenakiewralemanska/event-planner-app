@@ -1,7 +1,7 @@
 package io.mkolodziejczyk92.eventplannerapp.data.model.dto;
 
-import io.mkolodziejczyk92.eventplannerapp.data.entity.Offer;
-import io.mkolodziejczyk92.eventplannerapp.data.entity.User;
+import io.mkolodziejczyk92.eventplannerapp.data.entity.UserEvent;
+import io.mkolodziejczyk92.eventplannerapp.data.enums.Role;
 import lombok.*;
 
 import java.util.List;
@@ -20,16 +20,8 @@ public class UserDto {
     private String email;
     private String phoneNumber;
     private String password;
-    private String companyName;
-    private String regon;
-    private List<Offer> offers;
-
-    public UserDto(User user) {
-        this.setId(user.getId());
-        this.setUsername(user.getUsername());
-        this.setEmail(user.getEmail());
-        this.setPhoneNumber(user.getPhoneNumber());
-    }
-
+    private Role role;
+    private AddressDto address;
+    private List<UserEvent> userEvents;
 
 }

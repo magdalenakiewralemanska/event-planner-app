@@ -1,14 +1,13 @@
 package io.mkolodziejczyk92.eventplannerapp.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.mkolodziejczyk92.eventplannerapp.data.enums.ERole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -33,8 +32,18 @@ public class User {
     @JsonIgnore
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    @ElementCollection(fetch = FetchType.EAGER)
-    private Set<ERole> roles;
+    private String role;
+
+    @Column(name = "fist_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserEvent> userEvents;
 
 }

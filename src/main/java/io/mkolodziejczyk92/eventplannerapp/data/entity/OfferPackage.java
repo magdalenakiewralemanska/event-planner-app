@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -22,7 +20,7 @@ public class OfferPackage {
 
     private String title;
     private String description;
-    private BigDecimal price;
+    private double price;
     private String specials;
 
     @Column(name = "max_amount_of_people")
