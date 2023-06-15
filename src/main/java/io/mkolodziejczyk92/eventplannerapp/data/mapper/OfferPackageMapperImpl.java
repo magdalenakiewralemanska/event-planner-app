@@ -35,7 +35,7 @@ public class OfferPackageMapperImpl implements OfferPackageMapper{
         offerPackageDto.setIsOwnDrinkAvailable( offerPackage.getIsOwnDrinkAvailable());
         offerPackageDto.setSpecials( offerPackage.getSpecials() );
         offerPackageDto.setOtherDetails(offerPackage.getOtherDetails());
-        offerPackageDto.setOfferId( offerPackage.getOffer().getId() );
+        offerPackageDto.setOfferId( offerPackage.getOffer().getId());
 
         return offerPackageDto;
     }

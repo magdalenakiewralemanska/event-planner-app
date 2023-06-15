@@ -12,4 +12,10 @@ public interface OfferPackageService {
 
     OfferPackageDto getPackageById(Long id);
 
+    OfferPackageDto createPackage(OfferPackageDto offerPackageDto);
+
+    void deletePackage(Long id);
+
+    void updatePackage(Long id, OfferPackageDto offerPackageDto);
+
 }
