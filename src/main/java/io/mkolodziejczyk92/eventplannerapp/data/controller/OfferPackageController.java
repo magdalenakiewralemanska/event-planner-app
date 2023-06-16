@@ -30,7 +30,7 @@ public class OfferPackageController {
         packageService.createPackage(offerPackageDto);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("package/{id}")
     public void updatePackage(@RequestBody OfferPackageDto offerPackageDto, @PathVariable Long id){
         packageService.updatePackage(id, offerPackageDto);
     }

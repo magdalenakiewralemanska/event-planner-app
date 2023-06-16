@@ -11,6 +11,6 @@ public class SecurityConstant {
     public static final String ACCESS_DENIED = "Your permissions are insufficient";
     public static final String[] PUBLIC_URLS = {"/user/login", "/user/registration", "/events",
             "/events/*/offers/*", "/events/*/offers", "/offers/*", "/packageDetails/*", "/swagger-ui.html", "/swagger-ui/**",
-    "/v3/api-docs/**", "/package"};
+    "/v3/api-docs/**", "/package", "package/{id}"};
     public static final String TOKEN_HEADER = "Jwt-Token";
 }
