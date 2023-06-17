@@ -12,9 +12,11 @@ import java.util.List;
 public class OfferMapperImpl implements OfferMapper {
 
     private final EventRepository eventRepository;
+    private final AddressMapperImpl addressMapper;
 
-    public OfferMapperImpl(EventRepository eventRepository) {
+    public OfferMapperImpl(EventRepository eventRepository, AddressMapperImpl addressMapper) {
         this.eventRepository = eventRepository;
+        this.addressMapper = addressMapper;
     }
 
     @Override
@@ -31,9 +33,10 @@ public class OfferMapperImpl implements OfferMapper {
         offerDto.setMaxAge( offer.getMaxAge() );
         offerDto.setDescription( offer.getDescription() );
         offerDto.setOrganizer(offer.getOrganizer());
-        offerDto.setContact(offer.getContact());
+        offerDto.setContactEmail(offer.getContactEmail());
+        offerDto.setContactPhone(offer.getContactPhone());
         offerDto.setEventId( offer.getEvent().getId());
-        offerDto.setAddress( offer.getAddress() );
+        offerDto.setAddress( addressMapper.mapToAddressDto(offer.getAddress()) );
 
         return offerDto;
     }
@@ -45,16 +48,15 @@ public class OfferMapperImpl implements OfferMapper {
         }
 
         Offer offer = new Offer();
-
-        offer.setId(offerDto.getId());
         offer.setName(offerDto.getName());
         offer.setMinAge(offerDto.getMinAge());
         offer.setMaxAge(offerDto.getMaxAge());
         offer.setDescription(offerDto.getDescription());
         offer.setOrganizer(offerDto.getOrganizer());
-        offer.setContact(offerDto.getContact());
+        offer.setContactEmail(offerDto.getContactEmail());
+        offer.setContactPhone(offerDto.getContactPhone());
         offer.setEvent(eventRepository.findById(offerDto.getEventId()).get());
-        offer.setAddress(offerDto.getAddress());
+        offer.setAddress(addressMapper.mapToAddress(offerDto.getAddress()));
 
         return offer;
     }

@@ -18,7 +18,7 @@ public class OfferController {
 
     @GetMapping()
     public List<OfferDto> getOffers(@PathVariable Long id){
-        return offerService.getAllOffers(id);
+        return offerService.getAllOffersByEventId(id);
     }
 
     @GetMapping("/{offerId}")
@@ -26,7 +26,7 @@ public class OfferController {
         return offerService.getOfferById(offerId);
     }
 
-    @PostMapping()
+    @PostMapping("/addOffer")
     public void createOffer(@RequestBody OfferDto offerDto){
         offerService.createOffer(offerDto);
     }

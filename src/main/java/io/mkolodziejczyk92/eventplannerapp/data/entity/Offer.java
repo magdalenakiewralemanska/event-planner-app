@@ -23,7 +23,8 @@ public class Offer {
     private String name;
     private String description;
     private String organizer;
-    private String contact;
+    private String contactEmail;
+    private String contactPhone;
 
     @Column(name = "min_age")
     private int minAge;

@@ -2,6 +2,7 @@ package io.mkolodziejczyk92.eventplannerapp.data.service.impl;
 
 import io.mkolodziejczyk92.eventplannerapp.data.entity.Address;
 import io.mkolodziejczyk92.eventplannerapp.data.entity.User;
+import io.mkolodziejczyk92.eventplannerapp.data.enums.AddressType;
 import io.mkolodziejczyk92.eventplannerapp.data.enums.Role;
 import io.mkolodziejczyk92.eventplannerapp.data.exception.EmailExistException;
 import io.mkolodziejczyk92.eventplannerapp.data.exception.UserNotFoundException;
@@ -47,6 +48,7 @@ public class UserServiceImpl implements UserService {
         AddressDto addressDto = userDto.getAddress();
         if(addressDto != null) {
             Address address = addressService.saveAddress(addressDto);
+            address.setAddressType(AddressType.RESIDENCE);
             address.setUser(user);
             user.setAddress(address);
         }

@@ -35,7 +35,7 @@ public class OfferPackageController {
         packageService.updatePackage(id, offerPackageDto);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("package/{id}")
     public void deletePackage(@PathVariable Long id){
         packageService.deletePackage(id);
     }

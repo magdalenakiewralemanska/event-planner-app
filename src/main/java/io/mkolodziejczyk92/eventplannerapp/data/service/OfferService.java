@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface OfferService {
 
-    OfferDto createOffer(OfferDto offerDto);
+    void createOffer(OfferDto offerDto);
     void deleteOffer(Long id) ;
     void updateOffer(Long id, OfferDto offerDto);
-    List<OfferDto> getAllOffers(Long id);
+    List<OfferDto> getAllOffersByEventId(Long id);
     OfferDto getOfferById(Long id);
 }

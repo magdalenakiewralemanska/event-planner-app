@@ -31,7 +31,7 @@ public class Address {
     @Column(name = "zip_code")
     private String zipCode;
 
-    @OneToOne
+    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
     private Offer offer;
 
     @Enumerated(EnumType.STRING)
